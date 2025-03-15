@@ -1,0 +1,66 @@
+/* App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Island';
+  src: url('/fonts/Island_Roman.ttf') format('truetype');
+
+}
+
+@font-face {
+  font-family: 'Romancc';
+  src: url('/fonts/RomanAntique-Italic.ttf') format('truetype');
+
+}
+
+body {
+  @apply bg-gray-100 text-gray-900 font-sans;
+}
+
+/* Ensure images are responsive and maintain aspect ratio */
+.aspect-w-16.aspect-h-9 {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 9/16 = 0.5625 */
+}
+
+.aspect-w-16.aspect-h-9 img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+/* Transition effect for navigation links */
+.nav-link {
+  @apply transition-opacity duration-300 cursor-pointer;
+}
+
+/* Utility class for page container */
+.container-custom {
+  @apply max-w-6xl mx-auto p-4;
+}
+
+/* Project navigation styles */
+.project-navigation {
+  @apply flex justify-between items-center mt-6;
+}
+
+.project-navigation button {
+  @apply px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition;
+}
+
+.project-counter {
+  @apply text-lg font-medium text-gray-500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    @apply grid-cols-1;
+  }
+}

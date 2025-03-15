@@ -1,0 +1,242 @@
+/* PortfolioStyles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Island';
+    src: url('/fonts/Island_Roman.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Romancc';
+    src: url('/fonts/RomanAntique-Italic.ttf') format('truetype');
+}
+
+@layer base {
+    @font-face {
+        font-family: 'ming';
+        src: url('/fonts/MingLiU.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'montreal';
+        src: url('/fonts/PPNeueMontreal-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'montrealthin';
+        src: url('/fonts/PPNeueMontreal-Thin.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'montrealthinitc';
+        src: url('/fonts/PPNeueMontreal-ThinItalic.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'neueworld';
+        src: url('/fonts/PPNeueWorld-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer base {
+    @font-face {
+        font-family: 'editorial';
+        src: url('/fonts/PPEditorialOld-Thin.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+.font-ming {
+    font-family: 'ming', sans-serif !important;
+}
+
+.font-montreal {
+    font-family: 'montreal', sans-serif !important;
+}
+
+.font-montrealbold {
+    font-family: 'montrealbold', sans-serif !important;
+}
+
+.font-montrealthin {
+    font-family: 'montrealthin', sans-serif !important;
+}
+
+.font-montrealthinitc {
+    font-family: 'montrealthinitc', sans-serif !important;
+}
+
+.font-neueworld {
+    font-family: 'neueworld', sans-serif !important;
+}
+
+.font-editorial {
+    font-family: 'editorial', sans-serif !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.portfolio-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: white;
+}
+
+/* Projects column (formerly menu) */
+.projects-column {
+    width: 210px;
+    padding: 80px 0 0 30px;
+}
+
+.project-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'ming', sans-serif !important;
+}
+
+.project-item {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #666;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+    /* Faster transition */
+}
+
+.project-item:hover {
+    color: #000;
+}
+
+.project-item.active {
+    font-weight: 600;
+    color: #bf0a30;
+}
+
+/* Skills column (formerly submenu) */
+.skills-column {
+    width: 240px;
+    padding: 80px 0 0 30px;
+}
+
+.skill-items {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: 'ming', sans-serif !important;
+}
+
+.skill-item {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #aaa;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+    /* Faster transition */
+}
+
+.skill-item.active {
+    font-weight: 600;
+    color: #002868;
+}
+
+/* Content area */
+.content-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+    justify-content: space-between;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 30px 0 30px;
+}
+
+.project-image {
+    max-width: 100%;
+    max-height: calc(100vh - 180px);
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.15s ease;
+    /* Faster transition */
+}
+
+.content-footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.project-caption {
+    max-width: 60%;
+    font-size: 16px;
+    line-height: 1.5;
+    font-style: italic;
+    color: #888;
+    text-align: right;
+    font-family: 'ming', sans-serif;
+}
+
+.page-number {
+    font-size: 38px;
+    font-family: "Times New Roman", serif;
+    font-weight: 300;
+    color: #333;
+}
+
+/* Spotlight effect utility */
+.spotlight-transition {
+    transition-property: opacity;
+    transition-duration: 150ms;
+    /* Faster transition - changed from 300ms to 150ms */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Additions to PortfolioStyles.css */
