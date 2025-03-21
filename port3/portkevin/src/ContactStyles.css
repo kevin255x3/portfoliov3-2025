@@ -1,0 +1,573 @@
+/* Nintendo-inspired Contact Page Styles */
+
+/* Scoped Variables - applied only to contact page */
+.contact-page-container {
+    --nintendo-blue: #009ac7;
+    --nintendo-light-blue: #52bde3;
+    --nintendo-white: #ffffff;
+    --nintendo-light-gray: #f0f0f0;
+    --nintendo-gray: #8c8c8c;
+    --nintendo-dark-gray: #505050;
+    --nintendo-red: #e4000f;
+    --nintendo-green: #00cc00;
+    --nintendo-black: #000000;
+    --character-color: var(--nintendo-blue);
+    --font-primary: 'Nunito', 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+}
+
+.contact-page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #e0ebff 0%, #ffffff 100%);
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+    position: relative;
+    padding-top: 100px;
+    /* Account for navbar */
+}
+
+/* Nintendo Console Frame */
+.contact-page-container .nintendo-console-frame {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--nintendo-light-gray);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Nintendo Screen */
+.nintendo-screen {
+    background-color: var(--nintendo-white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.nintendo-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.screen-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Nintendo UI Elements */
+.nintendo-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.nintendo-header h1 {
+    font-size: 2.5rem;
+    color: var(--nintendo-black);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.pixel-underline {
+    height: 4px;
+    width: 100px;
+    margin: 0 auto;
+    background-color: var(--character-color);
+    transform: scale(1, 1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nintendo-header:hover .pixel-underline {
+    transform: scale(1.5, 1);
+}
+
+.nintendo-content {
+    margin-bottom: 2rem;
+}
+
+.nintendo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--nintendo-light-gray);
+}
+
+/* Custom Nintendo Cursor */
+.nintendo-cursor {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--character-color);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/* Nintendo Form Styles */
+.nintendo-form {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-step {
+    padding: 1rem;
+    background-color: var(--nintendo-light-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form-step h2 {
+    font-size: 1.5rem;
+    color: var(--nintendo-dark-gray);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px dotted rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--nintendo-dark-gray);
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--nintendo-light-blue);
+    border-radius: 5px;
+    background-color: var(--nintendo-white);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.contact-page-container .form-group input:focus,
+.contact-page-container .form-group textarea:focus {
+    outline: none;
+    border-color: var(--character-color);
+    box-shadow: 0 0 0 3px rgba(0, 154, 199, 0.2);
+}
+
+.contact-page-container .form-group input.error,
+.contact-page-container .form-group textarea.error {
+    border-color: var(--nintendo-red);
+}
+
+.error-message {
+    color: var(--nintendo-red);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.error-message::before {
+    content: '!';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background-color: var(--nintendo-red);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    font-size: 12px;
+}
+
+/* Form Controls */
+.form-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+/* Nintendo Button */
+.nintendo-button {
+    background-color: var(--character-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 120px;
+    box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.2),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.nintendo-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent);
+    border-radius: 30px 30px 0 0;
+    pointer-events: none;
+}
+
+.nintendo-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.nintendo-button-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-width: auto;
+}
+
+.button-icon {
+    font-size: 1.2rem;
+}
+
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Character Selection */
+.character-select {
+    margin-top: 2rem;
+}
+
+.character-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.character-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.character-option.selected {
+    border-color: var(--character-color);
+    background-color: rgba(0, 154, 199, 0.1);
+}
+
+.character-option img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.character-option span {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--nintendo-dark-gray);
+}
+
+/* Nintendo Controls */
+.nintendo-controls {
+    display: flex;
+    gap: 1rem;
+}
+
+.control-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.control-button {
+    width: 25px;
+    height: 25px;
+    background-color: var(--nintendo-dark-gray);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.control-hint span {
+    font-size: 0.85rem;
+    color: var(--nintendo-gray);
+}
+
+.audio-toggle {
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--nintendo-gray);
+    background-color: var(--nintendo-light-gray);
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.audio-toggle:hover {
+    background-color: var(--nintendo-gray);
+    color: white;
+}
+
+/* Success Message */
+.success-message {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--nintendo-light-gray);
+    border-radius: 10px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+    margin-bottom: 1.5rem;
+}
+
+.success-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.success-message h2 {
+    font-size: 2rem;
+    color: var(--nintendo-green);
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    color: var(--nintendo-dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.character-avatar {
+    margin: 1.5rem 0;
+}
+
+.character-avatar img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Audio Prompt */
+.audio-prompt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.audio-prompt-content {
+    background-color: var(--nintendo-white);
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.audio-prompt-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--nintendo-dark-gray);
+}
+
+.audio-prompt-content p {
+    color: var(--nintendo-gray);
+    margin-bottom: 1.5rem;
+}
+
+.audio-prompt-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Mobile Message */
+.mobile-message {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--nintendo-light-gray);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    font-size: 0.85rem;
+    color: var(--nintendo-dark-gray);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .contact-page-container .nintendo-header h1 {
+        font-size: 2rem;
+    }
+
+    .contact-page-container .form-controls {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-page-container .nintendo-button {
+        width: 100%;
+    }
+
+    .contact-page-container .character-options {
+        gap: 0.5rem;
+    }
+
+    .contact-page-container .character-option img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-page-container .nintendo-console-frame {
+        padding: 0.75rem;
+    }
+
+    .contact-page-container .nintendo-screen {
+        padding: 1rem;
+    }
+
+    .contact-page-container .form-step {
+        padding: 0.75rem;
+    }
+
+    .contact-page-container .nintendo-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(0, 154, 199, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 154, 199, 0.8);
+    }
+}
+
+/* For accessibility - :focus styles */
+.contact-page-container .form-group input:focus,
+.contact-page-container .form-group textarea:focus,
+.contact-page-container .nintendo-button:focus {
+    outline: 2px solid var(--character-color);
+    outline-offset: 2px;
+}
+
+/* Nintendo-specific decorations */
+.contact-page-container::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    background-image: url('/img/nintendo-star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.contact-page-container::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    background-image: url('/img/nintendo-coin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: 0;
+}

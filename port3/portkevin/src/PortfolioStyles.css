@@ -35,6 +35,16 @@
 
 @layer base {
     @font-face {
+        font-family: 'montrealbold';
+        src: url('/fonts/PPNeueMontreal-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer base {
+    @font-face {
         font-family: 'montrealthin';
         src: url('/fonts/PPNeueMontreal-Thin.woff') format('woff');
         font-weight: normal;
@@ -73,6 +83,16 @@
     }
 }
 
+@layer base {
+    @font-face {
+        font-family: 'machinabold';
+        src: url('/fonts/PPNeueMachina-InktrapUltrabold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
 .font-ming {
     font-family: 'ming', sans-serif !important;
 }
@@ -101,6 +121,10 @@
     font-family: 'editorial', sans-serif !important;
 }
 
+.font-machinabold {
+    font-family: 'machinabold', sans-serif !important;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -125,7 +149,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-family: 'ming', sans-serif !important;
+    font-family: 'montreal', sans-serif !important;
 }
 
 .project-item {
@@ -157,7 +181,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    font-family: 'ming', sans-serif !important;
+    font-family: 'montreal', sans-serif !important;
 }
 
 .skill-item {
@@ -221,12 +245,12 @@ body {
     font-style: italic;
     color: #888;
     text-align: right;
-    font-family: 'ming', sans-serif;
+    font-family: 'montrealitc', sans-serif;
 }
 
 .page-number {
     font-size: 38px;
-    font-family: "Times New Roman", serif;
+    font-family: "montreal", serif;
     font-weight: 300;
     color: #333;
 }

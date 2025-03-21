@@ -35,7 +35,7 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 w-full z-50 ">
             <div className="flex justify-between items-center h-16 px-8 bg-white ">
                 {/* Logo */}
-                <Link to="/" className="font-ming text-[#666] text-lg tracking-wide hover:text-black transition-colors">
+                <Link to="/" className="fomontrealbold text-[#666] text-lg tracking-wide hover:text-black transition-colors">
                     <img
                         src="/img/throw.png"
                         alt="Kevin Lazo"
@@ -44,30 +44,30 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex space-x-8 font-ming ">
+                <div className="hidden md:flex space-x-8 font-montrealbold ">
                     <Link
                         to="/"
                         className={`text-sm ${activeLink === 'work' ? 'text-[#bf0a30]' : 'text-[#666]'} hover:text-black transition-colors`}
                     >
-                        A LA CARTE
+                        INDEX
                     </Link>
                     <Link
                         to="/about"
                         className={`text-sm ${activeLink === 'about' ? 'text-[#bf0a30]' : 'text-[#666]'} hover:text-black transition-colors`}
                     >
-                        MAISON
+                        LEARN
                     </Link>
                     <Link
                         to="/contact"
                         className={`text-sm ${activeLink === 'contact' ? 'text-[#bf0a30]' : 'text-[#666]'} hover:text-black transition-colors`}
                     >
-                        SERVICE
+                        CONTACT
                     </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
-                    className="md:hidden font-ming text-sm text-[#666]"
+                    className="md:hidden fomontrealbold text-sm text-[#666]"
                     onClick={toggleMenu}
                 >
                     <div className="flex flex-col items-end">
@@ -80,27 +80,27 @@ const Navbar = () => {
 
             {/* Mobile Menu */}
             <div className={`md:hidden bg-white transition-transform duration-300 ${isMenuOpen ? 'h-auto py-4 border-b border-black/10' : 'h-0 overflow-hidden'}`}>
-                <div className="flex flex-col space-y-4 px-8 font-ming">
+                <div className="flex flex-col space-y-4 px-8 font-montrealbold">
                     <Link
                         to="/"
                         className={`mobile-menu-item text-sm ${activeLink === 'work' ? 'text-[#bf0a30]' : 'text-[#666]'}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        A LA CARTE
+                        INDEX
                     </Link>
                     <Link
                         to="/about"
                         className={`mobile-menu-item text-sm ${activeLink === 'about' ? 'text-[#bf0a30]' : 'text-[#666]'}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        MAISON
+                        LEARN
                     </Link>
                     <Link
                         to="/contact"
                         className={`mobile-menu-item text-sm ${activeLink === 'contact' ? 'text-[#bf0a30]' : 'text-[#666]'}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        SERVICE
+                        CONTACT
                     </Link>
                 </div>
             </div>

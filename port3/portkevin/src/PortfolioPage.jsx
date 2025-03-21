@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './Navbar';
 import Crosshair from './Crosshair';
 import './PortfolioStyles.css';
+import Footer from './Footer';
 
 const PortfolioPage = () => {
     const [activeProject, setActiveProject] = useState(null);
@@ -258,7 +259,7 @@ const PortfolioPage = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <nav className="p-4 border-b border-black/10">
-                            <div className="flex font-ming mb-4">
+                            <div className="flex font-montreal mb-4">
                                 <button
                                     onClick={() => setMobileTab('projects')}
                                     className={`flex-1 py-2 text-center uppercase text-sm tracking-wide ${mobileTab === 'projects' ? 'text-[#bf0a30] font-semibold border-b-2 border-[#bf0a30]' : 'text-[#666]'}`}
@@ -275,7 +276,7 @@ const PortfolioPage = () => {
 
                             {mobileTab === 'projects' && (
                                 <motion.ul
-                                    className="flex flex-col gap-3 font-ming"
+                                    className="flex flex-col gap-3 font-montreal"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3 }}
@@ -303,7 +304,7 @@ const PortfolioPage = () => {
 
                             {mobileTab === 'skills' && (
                                 <motion.div
-                                    className="flex flex-wrap gap-2 font-ming"
+                                    className="flex flex-wrap gap-2 font-montreal"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.3 }}
@@ -331,7 +332,7 @@ const PortfolioPage = () => {
 
             {/* Desktop Layout */}
             <div
-                className={`portfolio-container ${mobileView ? 'hidden' : 'flex'}`}
+                className={`portfolio-container pb-12 ${mobileView ? 'hidden' : 'flex'}`} // Add pb-12 for footer space
                 ref={portfolioContainerRef}
             >
                 {/* Add Crosshair component only for desktop view */}
@@ -340,6 +341,7 @@ const PortfolioPage = () => {
                 {/* Projects Column */}
                 <div className="projects-column" ref={projectsRef}>
                     <div className="project-items">
+                        <p className="font-montrealbold pb-4">Projects</p>
                         {projects.map((project, index) => (
                             <a
                                 key={index}
@@ -361,6 +363,7 @@ const PortfolioPage = () => {
                 {/* Skills Column */}
                 <div className="skills-column" ref={skillsRef}>
                     <div className="skill-items">
+                        <p className="font-montrealbold pb-4">Skills</p>
                         {allSkills.map((skill, index) => (
                             <div
                                 key={index}
@@ -400,7 +403,7 @@ const PortfolioPage = () => {
                                 />
                             )
                         ) : (
-                            <div className="empty-state font-ming">Select a project to view</div>
+                            <div className="empty-state font-montreal">Select a project to view</div>
                         )}
                     </div>
 
@@ -422,7 +425,7 @@ const PortfolioPage = () => {
                     {/* Page Header - Mobile */}
                     <div className="mb-6">
                         <motion.h1
-                            className="text-2xl font-ming uppercase tracking-wider mb-1"
+                            className="text-2xl font-montreal uppercase tracking-wider mb-1"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
@@ -430,7 +433,7 @@ const PortfolioPage = () => {
                             Portfolio
                         </motion.h1>
                         <motion.p
-                            className="text-sm text-gray-500 font-ming"
+                            className="text-sm text-gray-500 font-montreal"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
@@ -479,7 +482,7 @@ const PortfolioPage = () => {
                                         />
                                     )
                                 ) : (
-                                    <div className="w-full h-full flex items-center justify-center font-ming text-[#666] bg-gray-50">
+                                    <div className="w-full h-full flex items-center justify-center font-montreal text-[#666] bg-gray-50">
                                         Select a project to view
                                     </div>
                                 )}
@@ -495,14 +498,14 @@ const PortfolioPage = () => {
                                     exit={{ opacity: 0, y: -20 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <h2 className="text-2xl font-ming mb-2">{currentProject.title}</h2>
-                                    <p className="text-sm text-[#666] mb-4 font-ming">{currentProject.caption}</p>
+                                    <h2 className="text-2xl font-montreal mb-2">{currentProject.title}</h2>
+                                    <p className="text-sm text-[#666] mb-4 font-montreal">{currentProject.caption}</p>
 
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {currentProject.skills.map((skill, index) => (
                                             <motion.span
                                                 key={index}
-                                                className="text-xs border border-[#666] px-2 py-1 text-[#666] font-ming"
+                                                className="text-xs border border-[#666] px-2 py-1 text-[#666] font-montreal"
                                                 initial={{ opacity: 0, scale: 0.9 }}
                                                 animate={{ opacity: 1, scale: 1 }}
                                                 transition={{ delay: index * 0.03, duration: 0.2 }}
@@ -514,7 +517,7 @@ const PortfolioPage = () => {
 
                                     <motion.button
                                         onClick={() => handleViewProjectDetails(activeProject)}
-                                        className="bg-[#bf0a30] text-white py-3 px-6 font-ming text-sm uppercase tracking-wide w-full"
+                                        className="bg-[#bf0a30] text-white py-3 px-6 font-montreal text-sm uppercase tracking-wide w-full"
                                         whileHover={{ backgroundColor: "#a00920" }}
                                         whileTap={{ scale: 0.98 }}
                                     >
@@ -526,13 +529,13 @@ const PortfolioPage = () => {
                     </motion.div>
 
                     {/* Project Selection Pills - Always Visible */}
-                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 px-4 z-20">
+                    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 px-4 z-40">
                         <div className="flex overflow-x-auto gap-2 pb-1">
                             {projects.map((project, index) => (
                                 <motion.button
                                     key={index}
                                     onClick={() => setActiveProject(index)}
-                                    className={`whitespace-nowrap px-3 py-2 text-xs font-ming ${activeProject === index
+                                    className={`whitespace-nowrap px-3 py-2 text-xs font-montreal ${activeProject === index
                                         ? 'bg-[#bf0a30] text-white'
                                         : 'bg-gray-100 text-[#666]'
                                         }`}
@@ -545,6 +548,7 @@ const PortfolioPage = () => {
                     </div>
                 </div>
             )}
+            <Footer />
         </>
     );
 };
