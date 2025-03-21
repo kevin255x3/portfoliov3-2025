@@ -15,7 +15,7 @@ jobs:
           node-version: '20'
       - name: ⛏️Build Project
         run: |
-          cd portkevin
+          cd port3/portkevin
           npm install
           npm run build
       - name: 📁 Sync files
