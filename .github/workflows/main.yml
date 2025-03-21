@@ -15,7 +15,7 @@ jobs:
           node-version: '20'
       - name: ⛏️Build Project
         run: |
-          cd portkevin
+          cd port3/portkevin
           npm install
           npm run build
       - name: 📁 Sync files
@@ -24,5 +24,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "portkevin/dist/"
+          local-dir: "/port3/portkevin/dist/"
           server-dir: "/"
