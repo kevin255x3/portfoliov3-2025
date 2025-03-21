@@ -1,4 +1,4 @@
-// App.jsx
+// App.jsx IM READY TO DEPLOY
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import PortfolioPage from './PortfolioPage';
