@@ -43,9 +43,9 @@ const Footer = () => {
                     </div>
 
                     <div className="flex space-x-6 text-xs font-montreal">
-                        <a href="#" className="hover:text-[#002868] transition-colors">Instagram</a>
-                        <a href="#" className="hover:text-[#002868] transition-colors">LinkedIn</a>
-                        <a href="#" className="hover:text-[#002868] transition-colors">Dribbble</a>
+                        <a href="https://www.instagram.com/kevo.2121/" className="hover:text-[#002868] transition-colors">Instagram</a>
+                        <a href="https://www.linkedin.com/in/kevin-l-280314285/" className="hover:text-[#002868] transition-colors">LinkedIn</a>
+
                     </div>
                 </div>
             ) : (
