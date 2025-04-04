@@ -3,6 +3,7 @@ import InfiniteScroll from './InfiniteScroll';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './PortfolioStyles.css';
+import { Helmet } from 'react-helmet';
 
 // Simplified gallery component with minimal styling and mobile responsiveness
 const MinimalGallery = ({ items, isMobile }) => {
@@ -268,6 +269,26 @@ const About = () => {
 
     return (
         <>
+            <Helmet>
+                {/* Basic Metadata */}
+                <title>About | Kevin Lazo - Web Developer & Designer</title>
+                <meta name="description" content="Learn about Kevin Lazo's background, design philosophy, technical skills, and creative journey as a web developer and designer." />
+
+                {/* Search Engine Optimization */}
+                <link rel="canonical" href="https://madebykevinlazo.com/about" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="About | Kevin Lazo - Web Developer & Designer" />
+                <meta property="og:description" content="Learn about Kevin Lazo's background, design philosophy, technical skills, and creative journey as a web developer and designer." />
+                <meta property="og:image" content="https://madebykevinlazo.com/img/throw.png" />
+                <meta property="og:url" content="https://madebykevinlazo.com/about" />
+
+                {/* Twitter */}
+                <meta name="twitter:title" content="About | Kevin Lazo - Web Developer & Designer" />
+                <meta name="twitter:description" content="Learn about Kevin Lazo's background, design philosophy, technical skills, and creative journey as a web developer and designer." />
+                <meta name="twitter:image" content="https://madebykevinlazo.com/img/throw.png" />
+            </Helmet>
             <Navbar />
 
             <div className="min-h-screen bg-white font-montreal pt-20 md:pt-24">
@@ -280,8 +301,8 @@ const About = () => {
                                     key={section.id}
                                     onClick={() => handleNavClick(section.id)}
                                     className={`flex-shrink-0 text-sm mr-6 py-1 ${activeSection === section.id
-                                            ? 'text-black border-b-2 border-black'
-                                            : 'text-gray-400'
+                                        ? 'text-black border-b-2 border-black'
+                                        : 'text-gray-400'
                                         }`}
                                 >
                                     {section.title}

@@ -8,6 +8,8 @@ import Crosshair from './Crosshair';
 import './PortfolioStyles.css';
 import Footer from './Footer';
 
+import { Helmet } from 'react-helmet';
+
 const PortfolioPage = () => {
     const [activeProject, setActiveProject] = useState(null);
     const [imagesLoaded, setImagesLoaded] = useState({});
@@ -231,6 +233,26 @@ const PortfolioPage = () => {
 
     return (
         <>
+            <Helmet>
+                {/* Basic Metadata */}
+                <title>Portfolio | Kevin Lazo - Web Developer & Designer</title>
+                <meta name="description" content="Explore Kevin Lazo's web development and design projects, showcasing expertise in React, UI/UX, animations, and interactive experiences." />
+
+                {/* Search Engine Optimization */}
+                <link rel="canonical" href="https://madebykevinlazo.com" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Portfolio | Kevin Lazo - Web Developer & Designer" />
+                <meta property="og:description" content="Explore Kevin Lazo's web development and design projects, showcasing expertise in React, UI/UX, animations, and interactive experiences." />
+                <meta property="og:image" content="https://madebykevinlazo.com/img/throw.png" />
+                <meta property="og:url" content="https://madebykevinlazo.com" />
+
+                {/* Twitter */}
+                <meta name="twitter:title" content="Portfolio | Kevin Lazo - Web Developer & Designer" />
+                <meta name="twitter:description" content="Explore Kevin Lazo's web development and design projects, showcasing expertise in React, UI/UX, animations, and interactive experiences." />
+                <meta name="twitter:image" content="https://madebykevinlazo.com/img/throw.png" />
+            </Helmet>
             <Navbar />
 
             {/* Mobile Menu Toggle */}
