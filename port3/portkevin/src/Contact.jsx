@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import './PortfolioStyles.css/';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Helmet } from 'react-helmet';
 
 // Lazy load the optimized Threads component
 const ThreadsOptimized = lazy(() => import('./ThreadsOptimized'));
@@ -14,6 +15,26 @@ const ThreadsFallback = () => (
 const Contact = () => {
     return (
         <>
+            <Helmet>
+                {/* Basic Metadata */}
+                <title>Contact | Kevin Lazo - Web Developer & Designer</title>
+                <meta name="description" content="Get in touch with Kevin Lazo for collaborations, project inquiries, or just to have a chat. Connect via email or LinkedIn." />
+
+                {/* Search Engine Optimization */}
+                <link rel="canonical" href="https://madebykevinlazo.com/contact" />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Contact | Kevin Lazo - Web Developer & Designer" />
+                <meta property="og:description" content="Get in touch with Kevin Lazo for collaborations, project inquiries, or just to have a chat. Connect via email or LinkedIn." />
+                <meta property="og:image" content="https://madebykevinlazo.com/img/throw.png" />
+                <meta property="og:url" content="https://madebykevinlazo.com/contact" />
+
+                {/* Twitter */}
+                <meta name="twitter:title" content="Contact | Kevin Lazo - Web Developer & Designer" />
+                <meta name="twitter:description" content="Get in touch with Kevin Lazo for collaborations, project inquiries, or just to have a chat. Connect via email or LinkedIn." />
+                <meta name="twitter:image" content="https://madebykevinlazo.com/img/throw.png" />
+            </Helmet>
             <Navbar />
             <div className="w-full h-screen bg-white flex flex-col pt-20 relative overflow-hidden">
                 {/* Threads Background Effect with Suspense fallback */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet';
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -647,6 +648,26 @@ The project also reinforced my belief that sometimes the most effective solution
 
     return (
         <>
+            <Helmet>
+                {/* Basic Metadata - Dynamic based on current project */}
+                <title>{currentProject.title} | Kevin Lazo - Web Developer & Designer</title>
+                <meta name="description" content={currentProject.description} />
+
+                {/* Search Engine Optimization */}
+                <link rel="canonical" href={`https://madebykevinlazo.com/project/${currentProject.id}`} />
+
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={`${currentProject.title} | Kevin Lazo`} />
+                <meta property="og:description" content={currentProject.description} />
+                <meta property="og:image" content={`https://madebykevinlazo.com${currentProject.image || "/img/throw.png"}`} />
+                <meta property="og:url" content={`https://madebykevinlazo.com/project/${currentProject.id}`} />
+
+                {/* Twitter */}
+                <meta name="twitter:title" content={`${currentProject.title} | Kevin Lazo`} />
+                <meta name="twitter:description" content={currentProject.description} />
+                <meta name="twitter:image" content={`https://madebykevinlazo.com${currentProject.image || "/img/throw.png"}`} />
+            </Helmet>
             <Navbar />
 
             <div className="min-h-screen bg-white text-black font-montreal pb-16 md:pb-0">
