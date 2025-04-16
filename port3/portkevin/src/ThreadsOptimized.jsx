@@ -1,4 +1,6 @@
-// React bit component - imported to be used on the contact page. Optimized for web performance with co pilot
+// React bit component - imported to be used on the contact page. Optimized for web performance with co pilot. I have no experience prior to this working with web GL. 
+// It would have drastically impacted web performance if I did not use co-pilot.
+// The code notes will explain the changes made to the original component.
 
 import { useEffect, useRef, useState } from "react";
 import { Renderer, Program, Mesh, Triangle, Color } from "ogl";
