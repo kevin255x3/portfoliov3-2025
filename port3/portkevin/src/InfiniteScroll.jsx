@@ -1,4 +1,5 @@
-// InfiniteScroll.jsx
+// InfiniteScroll a react bit component that I am using on my about page. I adapted it to fit the needs of the portfolio.
+// Changed the image dimensions, position, and properties of the function to adapt to the page structure on desktop view.
 
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
@@ -7,17 +8,17 @@ import { Observer } from "gsap/Observer";
 gsap.registerPlugin(Observer);
 
 export default function InfiniteScroll({
-    // ----- Layout / Style Props -----
+    // Adjust the layout to work with the page structure
     width = "30rem",             // Width of the outer wrapper
     maxHeight = "100%",          // Max-height of the outer wrapper
     negativeMargin = "-0.5em",   // Negative margin to reduce spacing between items
-    // ----- Items Prop -----
+    // Items
     items = [],                  // Array of items with { content: ... }
     itemMinHeight = 150,         // Fixed height for each item
-    // ----- Tilt Props -----
+    // Tilt
     isTilted = false,            // Whether the container is in "skewed" perspective
     tiltDirection = "left",      // tiltDirection: "left" or "right"
-    // ----- Autoplay Props -----
+    // Autoplay
     autoplay = true,            // Whether it should automatically scroll
     autoplaySpeed = 3,          // Speed (pixels/frame approx.)
     autoplayDirection = "down",  // "down" or "up"
@@ -143,8 +144,6 @@ export default function InfiniteScroll({
             ref={wrapperRef}
             style={{ maxHeight }}
         >
-            {/* Gradient Overlays */}
-
 
             {/* Container */}
             <div
