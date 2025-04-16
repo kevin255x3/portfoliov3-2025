@@ -1,3 +1,7 @@
+// React bit component used on the main page of my portfolio.
+// Changed the color to be aligned with the color scheme and respond when on project items.
+// Slight turbulence on the svg when focused on a project.
+
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
