@@ -1,8 +1,13 @@
-// Navbar.jsx
+// Usestate and Useffect method imports
 import { useState, useEffect } from 'react';
+// Link and Location imports
 import { Link, useLocation } from 'react-router-dom';
+// Gsap information
 import { gsap } from 'gsap';
+// Unqiue style imports
 import './PortfolioStyles.css';
+
+// Will collapse into a mobile menu if the screen size is less than 768px
 
 const Navbar = () => {
     const [activeLink, setActiveLink] = useState('');
