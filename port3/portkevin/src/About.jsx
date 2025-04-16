@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+// React bit import
 import InfiniteScroll from './InfiniteScroll';
+// Navigation and footer import
 import Navbar from './Navbar';
 import Footer from './Footer';
+// Unique styles import
 import './PortfolioStyles.css';
+// Metadata dependency
 import { Helmet } from 'react-helmet';
 
-// Simplified gallery component with minimal styling and mobile responsiveness
+// This is the react bit, but simplified a bit for mobile repsonsiveness.
 const MinimalGallery = ({ items, isMobile }) => {
     return (
         <div className={`minimal-gallery ${isMobile ? 'minimal-gallery-mobile' : ''}`}>
@@ -87,11 +91,12 @@ const MinimalGallery = ({ items, isMobile }) => {
 };
 
 const About = () => {
+    // State handlers for active sections to jump to, if the gallery is open (mobile only), and to check the dimensions of the screen size, rendering the conditional mobile UI.
     const [activeSection, setActiveSection] = useState("tldr");
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [mobileView, setMobileView] = useState(false);
 
-    // Refs for each section
+    // References for each section.
     const sectionRefs = {
         tldr: useRef(null),
         origin: useRef(null),
@@ -111,7 +116,7 @@ const About = () => {
         return () => window.removeEventListener('resize', checkMobileView);
     }, []);
 
-    // Handle section navigation
+    // Handles section navigation
     const handleNavClick = (section) => {
         setActiveSection(section);
 
@@ -133,7 +138,7 @@ const About = () => {
         { content: <img src="/img/who3.png" alt="Gallery image 8" /> },
     ];
 
-    // About content sections with updated content
+    // About content sections with updated content, being rendered with map.
     const aboutSections = [
         {
             id: "tldr",
@@ -257,7 +262,7 @@ const About = () => {
         if (detail.type === "intro") {
             return <p key={i} className="text-sm">{detail.content}</p>;
         } else if (detail.type === "highlight" && i === 2) {
-            // Last item with uppercase PLAY
+            // Last item with uppercase, play -> PLAY
             const modifiedText = detail.content.replace("play", "PLAY");
             return <p key={i} className="text-sm font-medium">{modifiedText}</p>;
         } else if (detail.type === "highlight") {
@@ -331,14 +336,14 @@ const About = () => {
                 )}
 
                 <div className="flex flex-col md:flex-row">
-                    {/* Main Content Area - Left Side on desktop, full width on mobile */}
+                    {/* Left content area, full width on mobile. */}
                     <div className="w-full md:w-3/5 px-4 md:px-12 lg:px-16 pb-20 md:pb-24">
                         {/* Header with responsive padding */}
                         <div className="mb-10 md:mb-16">
                             <p className="text-sm uppercase tracking-wide text-gray-500 mb-1">Web Developer & Designer</p>
                             <h1 className="text-2xl uppercase tracking-tight font-normal mb-8 md:mb-12">Kevin Lazo</h1>
 
-                            {/* Desktop Navigation - Text-centric style */}
+                            {/* Desktop navigation, text-based style */}
                             <div className="hidden md:flex space-x-8">
                                 {aboutSections.map((section) => (
                                     <button
@@ -353,13 +358,14 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* Content with text-centric layout */}
+                        {/* Text centered content layout */}
+                        {/* Playing around with different text compositions to intuittively break down each section without a large section break */}
                         <div className="space-y-12 md:space-y-16">
                             {aboutSections.map((section, index) => (
                                 <div
                                     key={section.id}
                                     ref={sectionRefs[section.id]}
-                                    className="scroll-mt-32" // Increased scroll margin to account for sticky tabs
+                                    className="scroll-mt-32" // The scroll margin for each sticky tab.
                                 >
                                     {/* Section header in all caps with more prominence */}
                                     <h3 className="text-xl uppercase tracking-tight font-normal mb-4 md:mb-6">
@@ -438,7 +444,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    {/* Gallery - Right Side on desktop only */}
+                    {/* Gallery - Right side on desktop only*/}
                     {!mobileView && (
                         <div className="w-full md:w-2/5 h-screen sticky top-0">
                             <MinimalGallery items={galleryItems} isMobile={false} />
