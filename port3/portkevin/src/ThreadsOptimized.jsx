@@ -1,7 +1,9 @@
+// React bit component - imported to be used on the contact page. Optimized for web performance with co pilot
+
 import { useEffect, useRef, useState } from "react";
 import { Renderer, Program, Mesh, Triangle, Color } from "ogl";
 
-// Same shader code from original component
+// Shaders from the original component
 const vertexShader = `
 attribute vec2 position;
 attribute vec2 uv;
