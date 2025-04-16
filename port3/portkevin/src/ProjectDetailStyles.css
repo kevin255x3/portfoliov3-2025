@@ -1,9 +1,9 @@
-/* ProjectDetailStyles.css */
+/* Styles for the project details screen - needed to use seperate css styles to achieve the look and layout of this page. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import the same fonts as PortfolioStyles.css */
+/* same fonts as PortfolioStyles.css */
 @font-face {
     font-family: 'Island';
     src: url('/fonts/Island_Roman.ttf') format('truetype');
@@ -114,7 +114,7 @@ body {
     color: #f27935;
 }
 
-/* Content Column - Made scrollable */
+/* Content column */
 .content-column {
     flex: 1;
     overflow-y: auto;
@@ -187,14 +187,14 @@ body {
     width: 100%;
 }
 
-/* Spotlight effect utility */
+/* Same spotlight effect */
 .spotlight-transition {
     transition-property: opacity;
     transition-duration: 300ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Media queries for responsive design */
+/* Responsive media queries */
 @media (max-width: 768px) {
     .project-detail-container {
         flex-direction: column;
