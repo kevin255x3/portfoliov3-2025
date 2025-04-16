@@ -1,9 +1,13 @@
+// React imports
 import React, { useEffect, useState } from 'react';
+// Routing imports
 import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    // State handlers for mobile and footer visibility
     const [showFooter, setShowFooter] = useState(true);
     const [isMobile, setIsMobile] = useState(false);
+    // Location hook
     const location = useLocation();
 
     // Check if we should show footer based on route and screen size
