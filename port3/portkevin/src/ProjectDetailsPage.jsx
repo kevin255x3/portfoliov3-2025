@@ -1,22 +1,35 @@
+// useState, useEffect, useEffect for Gsap and use Ref imports
 import React, { useState, useEffect, useRef } from 'react';
+// Meta data dependency
 import { Helmet } from 'react-helmet';
+// React icon library
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react';
+// Routing imports
 import { useNavigate, useParams } from 'react-router-dom';
+// Framer motion animation library
 import { motion } from 'framer-motion';
+// Navbar and footer component imports
 import Navbar from './Navbar';
 import Footer from './Footer';
+// Unique style imports
 import './PortfolioStyles.css';
 
 const ProjectDetailsPage = () => {
+    // State variables originally had a section reference, but will leave the variable here in the future when I know how to implement them in a more visually appealing style
+    // Right now, it is just simply scroll to navigate
     const [activeSection, setActiveSection] = useState(null);
+    // Checks screen dimensions and adjusts the spacing, and composition accordingly
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setIsTablet] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
+    // Used for routing
     const navigate = useNavigate();
+    // Which id should be rendered
     const { projectId } = useParams();
+    // Reference to the main content container for scroll management and positioning
     const mainRef = useRef(null);
 
-    // Array of projects
+    // Array of projects, rearranged the id's of the projects to match the order of importance
     const projects = [
         // Project 1: FONTS.LOCAL
         {
@@ -610,7 +623,7 @@ The project also reinforced my belief that sometimes the most effective solution
     // Find the current project based on the projectId URL parameter
     const currentProject = projects.find(p => p.id === projectId) || projects[0];
 
-    // Enhanced device detection for better responsive handling
+    // Device detection for better responsive handling
     useEffect(() => {
         const checkDeviceSize = () => {
             const width = window.innerWidth;
@@ -636,7 +649,7 @@ The project also reinforced my belief that sometimes the most effective solution
         // Initial check
         checkDeviceSize();
 
-        // Add event listeners
+        // Event listeners
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', checkDeviceSize);
 
@@ -863,7 +876,7 @@ The project also reinforced my belief that sometimes the most effective solution
                                 </div>
                             </div>
 
-                            {/* Right side - 2x2 image grid with better responsive spacing */}
+                            {/* Right side - 2x2 image grid with responsive spacing */}
                             <div className="lg:col-span-6 mt-6 sm:mt-8 lg:mt-0">
                                 <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
                                     {currentProject.overviewImages.slice(0, 4).map((image, index) => (
@@ -892,7 +905,7 @@ The project also reinforced my belief that sometimes the most effective solution
                             </p>
                         </div>
 
-                        {/* Only render wireframes section if wireframes exist */}
+                        {/* Only render wireframes section if wireframes exist - some projects are designed during development */}
                         {currentProject.wireframes && currentProject.wireframes.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-y-10 md:gap-x-8 md:gap-y-16">
                                 {currentProject.wireframes.map((wireframe, index) => (
@@ -935,7 +948,7 @@ The project also reinforced my belief that sometimes the most effective solution
                             </p>
                         </div>
 
-                        {/* Technical challenges and solutions - improved responsive grid */}
+                        {/* Technical challenges and solutions -  responsive grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-8">
                             <div>
                                 <p className="text-sm uppercase tracking-wide mb-4 sm:mb-6">
@@ -983,7 +996,7 @@ The project also reinforced my belief that sometimes the most effective solution
                         </div>
                     </section>
 
-                    {/* Enhanced Gallery section with better responsive spacing */}
+                    {/* Gallery section with responsive spacing */}
                     <section className="mb-16 sm:mb-20 lg:mb-32">
                         <div className="mb-8 sm:mb-10 lg:mb-12">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase font-montrealbold tracking-tight leading-none mb-3 sm:mb-4 lg:mb-8">
@@ -1037,7 +1050,7 @@ The project also reinforced my belief that sometimes the most effective solution
                     </section>
 
 
-                    {/* Reflection section - more introspective and personal */}
+                    {/* Reflection section  */}
                     <section className="mb-20 sm:mb-24 lg:mb-32">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
                             <div className="md:col-span-4 mb-4 md:mb-0">
@@ -1071,7 +1084,7 @@ The project also reinforced my belief that sometimes the most effective solution
                         </div>
                     </section>
 
-                    {/* Project navigation - improved responsive layout */}
+                    {/* Project navigation -  responsive layout */}
                     <section className="mt-16 sm:mt-20 lg:mt-32 pt-8 sm:pt-12 border-t border-black/10">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
                             <div className="md:col-span-6 mb-8 md:mb-0">
@@ -1105,7 +1118,7 @@ The project also reinforced my belief that sometimes the most effective solution
                             </div>
                         </div>
 
-                        {/* Enhanced mobile fixed navigation */}
+                        {/*  mobile fixed navigation */}
                         <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-black/10 z-20 p-3 flex justify-between">
                             <button
                                 onClick={() => navigate(`/project/${currentProject.prevProject.id}`)}
