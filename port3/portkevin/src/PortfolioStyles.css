@@ -1,4 +1,4 @@
-/* PortfolioStyles.css */
+/* Styles that I used for the each unique pages that can only be achieved with vanilla css classes, and some animations */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -139,7 +139,7 @@ body {
     background-color: white;
 }
 
-/* Projects column (formerly menu) */
+/* Projects column */
 .projects-column {
     width: 210px;
     padding: 80px 0 0 30px;
@@ -171,7 +171,7 @@ body {
     color: #bf0a30;
 }
 
-/* Skills column (formerly submenu) */
+/* Skills column*/
 .skills-column {
     width: 240px;
     padding: 80px 0 0 30px;
@@ -255,12 +255,10 @@ body {
     color: #333;
 }
 
-/* Spotlight effect utility */
+/* Spotlight effect utility - used in accordance of the crosshair component */
 .spotlight-transition {
     transition-property: opacity;
     transition-duration: 150ms;
     /* Faster transition - changed from 300ms to 150ms */
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Additions to PortfolioStyles.css */
