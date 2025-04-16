@@ -1,7 +1,11 @@
+// React imports , lazing loading
 import React, { Suspense, lazy } from 'react';
+// Unique style imports
 import './PortfolioStyles.css/';
+// Header and footer component imports
 import Navbar from './Navbar';
 import Footer from './Footer';
+// Meta data dependency
 import { Helmet } from 'react-helmet';
 
 // Lazy load the optimized Threads component
