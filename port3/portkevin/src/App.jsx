@@ -1,15 +1,19 @@
-// App.jsx IM READY TO DEPLOY
+// Routing Imports
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+// UseEffect Imports
 import { useEffect } from 'react';
+// Component Imports
 import PortfolioPage from './PortfolioPage';
 import ProjectDetailsPage from './ProjectDetailsPage';
 import Navbar from './Navbar';
 import About from './About';
 import Contact from './Contact';
+//Unique style imports
 import './PortfolioStyles.css';
+// ScrolltoTop function
 import ScrollToTop from './ScrollToTop';
 
-//metadata
+//Metadata dependency
 import { Helmet } from 'react-helmet';
 
 // Component to handle body overflow based on route
@@ -80,6 +84,8 @@ function App() {
         {/* Additional */}
         <meta name="color-scheme" content="light" />
       </Helmet>
+
+      {/* Routes */}
       <div className="App">
         <Routes>
           <Route path="/" element={<PortfolioPage />} />
