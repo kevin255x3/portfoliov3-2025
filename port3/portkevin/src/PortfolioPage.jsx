@@ -1,25 +1,41 @@
-// PortfolioPage.jsx - With Enhanced Mobile Experience
+// Usestate, useEffect, and useRef imports
 import { useState, useEffect, useRef } from 'react';
+// Gsap import
 import { gsap } from 'gsap';
+//Use navigate import
 import { useNavigate } from 'react-router-dom';
+// Framer motion animation imports
 import { motion, AnimatePresence } from 'framer-motion';
+// Component imports
 import Navbar from './Navbar';
 import Crosshair from './Crosshair';
+// Unique style imports
 import './PortfolioStyles.css';
+// Footer component import
 import Footer from './Footer';
-
+// Meta data dependency
 import { Helmet } from 'react-helmet';
 
 const PortfolioPage = () => {
+    // State variables for different interactions on the page. 
+    // Which project is selected
     const [activeProject, setActiveProject] = useState(null);
+    // Are the images loading
     const [imagesLoaded, setImagesLoaded] = useState({});
+    // Mobile menu
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    // Is the screen size less than 768px
     const [mobileView, setMobileView] = useState(false);
+    // Mobile tabs
     const [mobileTab, setMobileTab] = useState('projects'); // 'projects' or 'skills'
 
+    // Reference to the projects section DOM element for scrolling and visibility calculations
     const projectsRef = useRef(null);
+    // Reference to the skills section DOM element for scrolling and visibility calculations
     const skillsRef = useRef(null);
+    // Reference to the main portfolio container for managing overall scroll behavior
     const portfolioContainerRef = useRef(null);
+    // Navigation between routes
     const navigate = useNavigate();
 
     // Check window size to determine mobile view
@@ -354,10 +370,10 @@ const PortfolioPage = () => {
 
             {/* Desktop Layout */}
             <div
-                className={`portfolio-container pb-12 ${mobileView ? 'hidden' : 'flex'}`} // Add pb-12 for footer space
+                className={`portfolio-container pb-12 ${mobileView ? 'hidden' : 'flex'}`}
                 ref={portfolioContainerRef}
             >
-                {/* Add Crosshair component only for desktop view */}
+                {/* Crosshair component only for desktop view */}
                 {!mobileView && <Crosshair color="#bf0a30" containerRef={portfolioContainerRef} />}
 
                 {/* Projects Column */}
@@ -440,6 +456,8 @@ const PortfolioPage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Renders mobile layout when hitting mobile breakpoint */}
 
             {/* Mobile Layout */}
             {mobileView && (
